@@ -1,4 +1,4 @@
-package basic_DS;
+package list_imple_class;
 /*
  * one dimensional array example
  */
