@@ -59,6 +59,25 @@ public class SLinkedList
 	}
 	
 	
+	/*
+	 * inserting the node at the specified position in LinkedList
+	 * 
+	 */
+	public void insertAtPosition(int position,int data)
+	{
+		ListNode new_node = new ListNode(data);
+		ListNode prev = head;
+		int count=1;
+		while(count > position)
+		{
+			prev=prev.next;
+			count++;
+		}
+		new_node.next =  prev.next;
+		prev.next = new_node;
+		
+	}
+	
 	private static class  ListNode
 	{
 		private int data;
@@ -85,9 +104,15 @@ public class SLinkedList
 		node1.next = node2;
 		node2.next = node3;
 		slist.insertAtFirst(123);
-		
+		/*
+		 * 
+		 * inserting the element at the end of the node
+		 */
 		slist.insertAtEnd(78);
+		
+		/* inserting the node at the specified location */
 		slist.insertAfter(node2,456);
+		slist.insertAtPosition(2,22);
 		slist.showData(slist.head);
 		
 
