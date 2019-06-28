@@ -102,9 +102,12 @@ class DeleteNode{
 	
 	
 	
-		int minValue = root.data;
-		public int minValue(Node root){
-			while(root.left!=null){
+		
+		public int minValue(Node root)
+		{
+			int minValue = root.data;
+			while(root.left!=null)
+			{
 				minValue = root.left.data;
 				root = root.left;
 			}
@@ -119,7 +122,18 @@ class DeleteNode{
 	
 	public static void main(String[] args)
 	{
+		DeleteNode dlt = new DeleteNode(50);
+		dlt.insertNode(dlt.root,31);
+		dlt.insertNode(dlt.root,61);
+		dlt.insertNode(dlt.root,12);
+		dlt.insertNode(dlt.root,34);
+		dlt.insertNode(dlt.root,57);
 		
+		dlt.inOrderTraversal(dlt.root);
+		
+		dlt.deleteNode(dlt.root , 31);
+		
+		dlt.inOrderTraversal(dlt.root);
 	}
 }
 
