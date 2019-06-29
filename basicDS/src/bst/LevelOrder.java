@@ -63,12 +63,8 @@ class LevelOrder{
 	public void levelOrder()
 	{
 		Queue<Node> q  =  new LinkedList<Node>();
-		Queue<Node> q1 =  new LinkedList<Node>();
-		q.add(root);
-		q1.add(root); //---
-		q.add(null);
-		q1.add(null);  //-----
 		
+		q.add(root);
 		while(!q.isEmpty())
 		{
 			
@@ -80,31 +76,17 @@ class LevelOrder{
 					if(tmp.left!=null)
 					{
 						q.add(tmp.left);
-						q1.add(tmp.left);//----
 					}
 			
 					if(tmp.right!=null)
 					{
 						q.add(tmp.right);
-						q1.add(tmp.right); //----
 					}
 					Node tmp1 = q.poll();
 				}
-				if(tmp==null)
-				{
-					Node isnull = q.peek();
-					if(isnull!=null)
-					{
-						q.add(null);
-						q1.add(null);
-					}
-					
-					q.poll();
-					q1.add(null);
-				}
+				
 				
 		}
-		System.out.println(q1);
 	}
 			
 			
@@ -112,10 +94,11 @@ class LevelOrder{
 		
 	public static void main(String[] args)
 	{
-		LevelOrder ordr = new LevelOrder(50);
-		ordr.insertNode(ordr.root,31);
-		ordr.insertNode(ordr.root,32);
-		ordr.insertNode(ordr.root,57);
+		LevelOrder ordr = new LevelOrder(51);
+					ordr.insertNode(ordr.root , 25);
+					ordr.insertNode(ordr.root , 46);
+					ordr.insertNode(ordr.root , 14);
+					ordr.insertNode(ordr.root , 12);
 		
 		ordr.inOrder(ordr.root);
 		System.out.println("Level Order");
