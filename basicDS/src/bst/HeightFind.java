@@ -49,19 +49,19 @@ class HeightFind{
 	//Utility Function To Find max of two numbers
 	public int max(int a , int b)
 	{
-		return ((a<b)? b:a);
+		return ((a>b)? a:b);
 	}
 	
 	
 	
 	public static void main(String[] args)
 	{
-		HeightFind f  =  new HeightFind(51);
-		f.insert(f.root , 36);
-		f.insert(f.root , 67);
-		f.insert(f.root , 12);
-		f.insert(f.root , 66);
-		f.insert(f.root  ,65);
+		HeightFind f  =  new HeightFind(10);
+		f.insert(f.root , 28);
+		f.insert(f.root , 16);
+		f.insert(f.root , 29);
+		//f.insert(f.root , 5);
+		//f.insert(f.root  ,86);
 		
 		int h = f.heightFind(f.root);
 		System.out.println(h);
