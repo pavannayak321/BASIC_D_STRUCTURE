@@ -5,16 +5,30 @@ public class DoublyLinkedList {
 	ListNode tail;
 	int length;
 	
+
+	private class ListNode
+	{
+		int data;
+		ListNode next;
+		ListNode prev;
+		
+	public 	ListNode(int data)
+		{
+			this.data = data;
+			this.next = null;
+			this.prev = null;
+			
+		}
+	}
+	
 	
 	/* creating the doubly LinkedList constructor */
-	DoublyLinkedList()
+	public DoublyLinkedList()
 	{
 		this.head = null;
 		this.tail = null;
 		this.length  = 0;
 	}
-	
-	
 	
 	
 	
@@ -72,25 +86,6 @@ public class DoublyLinkedList {
 		{
 			System.out.println(tmp.data);
 			tmp = tmp.next;
-		}
-	}
-
-	
-	
-	
-	
-	private class ListNode
-	{
-		int data;
-		ListNode next;
-		ListNode prev;
-		
-	public 	ListNode(int data)
-		{
-			this.data = data;
-			this.next = null;
-			this.prev = null;
-			
 		}
 	}
 	
