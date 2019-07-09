@@ -91,6 +91,68 @@ public class SinglyLinkedList
 		}
 		return false;
 	}
+	
+	
+	//reverse the singly linked list 
+	
+	public void  reverse(){
+		ListNode current ;
+		ListNode prev=null;
+		ListNode next=null;
+		
+		current = head;
+		while(current!=null){
+			next = current.next;
+			current.next = prev;
+			prev = current;
+			current = next;
+		}
+		while(prev!=null){
+			System.out.print(prev.data+" ");
+			prev = prev.next;
+		}
+	}
+	
+	
+	//ifnd the middle element of linked list 
+	public ListNode findMiddle(ListNode head){
+		
+		ListNode slowPtr = head;
+		ListNode fastPtr = head;
+		if(head!=null){
+		
+			while(fastPtr!=null && fastPtr.next!=null)
+			{
+				fastPtr = fastPtr.next.next;
+				slowPtr = slowPtr.next;
+				
+			}
+		}
+		//System.out.println(slowPtr.data+"  ");
+		return slowPtr;
+	}
+	
+	/*public ListNode sortedList(ListNode a , ListNode b)
+	{
+		ListNode result;
+		
+	
+	public ListNode mergesort(ListNode head)
+	{
+		ListNode middleOfNext;
+		if(head==null)||(head.next==null){
+			return head;
+		}
+		ListNode middle = findMiddle(head);
+			middleOfNext =  middle.next;
+			middle.next = null;
+			
+			ListNode left_node = mergesort(head);
+			ListNode right_node =  mergesort(middleOfNext);
+			
+		ListNode sortedlist = sortedList(left_node , right_node);	
+		
+	*/
 	public static void main(String[] args)
 	{
 		//-------------
@@ -98,15 +160,21 @@ public class SinglyLinkedList
 		list.insertBeg(12);
 		list.insertBeg(22);
 		list.insertBeg(34);
-		list.printElements();
-		int j = list.length();
-		System.out.println("length of linked list"+j);
+		//list.printElements();
+		//int j = list.length();
+		//System.out.println("length of linked list"+j);
 		list.insertPos(2,53);
-		list.printElements();
 		list.insertEnd(234);
-		list.insertEnd(345);
+		//list.insertEnd(345);
 		list.printElements();
-		list.searchKey(53);
+		System.out.println("Finding the middle lelememnt");
+		list.findMiddle();
+		//list.printElements();
+		//list.searchKey(53);
+		list.reverse();
+		//list.findMiddle();
+		//System.out.println(j.data);
+		//list.printElements();
 	}
 }
 	
