@@ -65,6 +65,16 @@ class DoublyLinkedListDemo
 	
 	
 	
+	//print Elements of LinkedList
+	public void printEle(){
+		ListNode tmp = head;
+		while(tmp!=null){
+			System.out.print(tmp.data+" ");
+			tmp = tmp.next;
+		}
+	}
+	
+	
 	
 	
 	
@@ -74,6 +84,16 @@ class DoublyLinkedListDemo
 		//list.insertBeg(23);
 		System.out.println(list.length);
 		list.insertEnd(34);
-		System.out.println(list.length);
+		//System.out.println(list.length);
+		//list.printEle();
+		list.insertBeg(12);
+		list.insertBeg(23);
+		list.insertBeg(45);
+		list.insertBeg(67);
+		list.insertBeg(78);
+		list.insertBeg(89);
+		
+		
+		list.printEle();
 	}
 }
