@@ -68,6 +68,10 @@ public class SinglyLinkedList
 	public void insertEnd(int data)
 	{
 		ListNode new_node  = new ListNode(data);
+		if(head==null){
+			head = new_node;
+			return;
+		}
 		ListNode tmp = head;
 		while(tmp.next!=null){
 			tmp = tmp.next;
@@ -157,7 +161,8 @@ public class SinglyLinkedList
 	{
 		//-------------
 		SinglyLinkedList list =  new SinglyLinkedList();
-		list.insertBeg(12);
+		//list.insertBeg(234);
+		list.insertEnd(12);
 		list.insertBeg(22);
 		list.insertBeg(34);
 		//list.printElements();
@@ -168,7 +173,7 @@ public class SinglyLinkedList
 		//list.insertEnd(345);
 		list.printElements();
 		System.out.println("Finding the middle lelememnt");
-		list.findMiddle();
+		//list.findMiddle();
 		//list.printElements();
 		//list.searchKey(53);
 		list.reverse();
